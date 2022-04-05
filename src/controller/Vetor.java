@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Vetor {
 
 
-    public static final Integer QTD_DE_VEICULOS=3;
+    public static final Integer QTD_DE_VEICULOS=10;
     public  Integer veiculosDisponiveis =0;
     Veiculos[] veiculo = new Veiculos[QTD_DE_VEICULOS];
 

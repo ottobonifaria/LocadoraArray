@@ -13,7 +13,6 @@ public class Program {
             menu = sc.nextInt();
             switch (menu) {
                 case 1:
-                    //cadastraVeiculo();
                     lista.cadastraVeiculo();
                     break;
                 case 2:
