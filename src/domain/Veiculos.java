@@ -7,13 +7,16 @@ public class Veiculos implements Comparable<Veiculos>{
     private String cor;
     private String placa;
     private int valorDaDiaria;
+    private boolean alugado;
 
-    public Veiculos(String marca, String modeloVeiculo, String cor, String placa,int valorDaDiaria) {
+    public Veiculos(String marca, String modeloVeiculo,String cor, String placa,
+                    int valorDaDiaria, boolean alugado) {
         this.marca = marca;
         this.modeloVeiculo = modeloVeiculo;
         this.cor = cor;
         this.placa = placa;
         this.valorDaDiaria = valorDaDiaria;
+        this.alugado = alugado;
     }
 
     public String getMarca() {
@@ -54,6 +57,14 @@ public class Veiculos implements Comparable<Veiculos>{
 
     public void setValorDaDiaria(int valorDaDiaria) {
         this.valorDaDiaria = valorDaDiaria;
+    }
+
+    public boolean isDisponivel() {
+        return alugado;
+    }
+
+    public void setDisponivel(boolean disponivel) {
+        this.alugado = disponivel;
     }
 
     @Override

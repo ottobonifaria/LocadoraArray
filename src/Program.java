@@ -25,18 +25,26 @@ public class Program {
                     lista.listarVeiculos();
                     break;
                 case 4:
+                    lista.listaVeiculosDisponiveis();
+                    break;
+                case 5:
+                    lista.aluga();
+                    break;
+                case 6:
                     break;
                 default:
                     System.out.println("Opção Inválida");
             }
-        }while(menu !=4);
+        }while(menu !=6);
     }
     static public void exibirMenu() {
         System.out.println("========== LOCADORA ===========");
         System.out.println(" 1 - CADASTRAR");
-        System.out.println(" 2 - LISTAR");
+        System.out.println(" 2 - LISTAR VEICULOS CADASTRADO");
         System.out.println(" 3 - ORDENAR MENOR VALOR");
-        System.out.println(" 4 - SAIR");
+        System.out.println(" 4 - CONSULTA VEICULA DISPONIVEL PARA ALUGAR");
+        System.out.println(" 5 - ALUGA VEICULO");
+        System.out.println(" 6 - SAIR");
 
     }
 }
