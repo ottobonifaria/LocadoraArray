@@ -1,4 +1,5 @@
-import controller.Vetor;
+import controller.VeiculoController;
+import domain.Veiculo;
 
 import java.util.Scanner;
 
@@ -7,28 +8,32 @@ public class Program {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int menu;
-        Vetor lista = new Vetor();
+        //Veiculo[] veiculos = new Veiculo[10];
+        VeiculoController veiculoController = new VeiculoController();
+        veiculoController.cadastra(); // Pré-cadastra 5 veiculos
+
         do{
             exibirMenu();
             menu = sc.nextInt();
             switch (menu) {
                 case 1:
-                    lista.cadastraVeiculo();
+                    veiculoController.cadastraVeiculo();
                     break;
                 case 2:
                     System.out.println("\n===== FIFTCARS ===== \n Confira nossos modelos\n");
                     System.out.println("=====> LISTA DE VEICULO <=====");
-                    lista.listarVeiculos();
+                    veiculoController.listarVeiculos();
                     break;
                 case 3:
-                    lista.ordena();
-                    lista.listarVeiculos();
+                    veiculoController.ordena();
+                    veiculoController.listarVeiculos();
                     break;
                 case 4:
-                    lista.listaVeiculosDisponiveis();
+                    System.out.println("=========== LISTA DE VEICULOS DISPONIVEIS ============\n");
+                    veiculoController.listaVeiculosDisponiveis();
                     break;
                 case 5:
-                    lista.aluga();
+                    veiculoController.aluga();
                     break;
                 case 6:
                     break;
@@ -47,4 +52,6 @@ public class Program {
         System.out.println(" 6 - SAIR");
 
     }
+
+
 }

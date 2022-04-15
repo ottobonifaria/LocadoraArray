@@ -1,13 +1,13 @@
 package controller;
-import domain.Veiculos;
+import domain.Veiculo;
 import java.util.Arrays;
 import java.util.Scanner;
-public class Vetor {
+public class VeiculoController {
 
 
-    public static final Integer QTD_DE_VEICULOS=10;
-    public  Integer veiculosCadastrados =0;
-    Veiculos[] veiculo = new Veiculos[QTD_DE_VEICULOS];
+    public static final Integer QTD_DE_VEICULOS=5;
+    public  int veiculosCadastrados = 0;
+    Veiculo[] veiculo = new Veiculo[QTD_DE_VEICULOS];
 
 
     public void cadastraVeiculo(){
@@ -26,7 +26,7 @@ public class Vetor {
                 System.out.println("Digite o valor da Diaria");
                 int valorDaDiaria = sc.nextInt();
                 boolean alugado = false;
-                veiculo[veiculosCadastrados] = new Veiculos(marca, modeloVeiculo, cor, placa, valorDaDiaria,alugado);
+                veiculo[veiculosCadastrados] = new Veiculo(marca, modeloVeiculo, cor, placa, valorDaDiaria,alugado);
                 veiculosCadastrados++;
             }else{
                 System.out.println("Campo já preenchido");
@@ -37,8 +37,7 @@ public class Vetor {
         try {
             if (veiculosCadastrados != 0) {
                 for (int i = 0; i < veiculosCadastrados; i++) {
-                    System.out.println("\n========= Veiculo Nun. " + (i + 1) + " =========\n");
-                    System.out.println(veiculo[i].toString());
+                    System.out.println(" Veiculo: " + (i + 1) + " --> " + veiculo[i].toString());
                 }
             } else {
                 System.out.println("Não Existe Veiculo cadastrado");
@@ -55,8 +54,7 @@ public class Vetor {
 
         for (int i = 0; i < veiculosCadastrados; i++) {
             if(veiculo[i].isDisponivel()==false){
-                System.out.println("\n========= Veiculo Nun. " + (i + 1) + " Esta disponivel =========\n");
-                System.out.println(veiculo[i].toString());
+                System.out.println( veiculo[i].toString());
             }
         }
     }
@@ -74,5 +72,18 @@ public class Vetor {
             System.out.println(veiculo[i].toString());
         }
 
+    }
+    public void cadastra() {
+        veiculosCadastrados = 5;
+        veiculo[0] = new Veiculo("Fiat", "Toro", "Preta", "AAA-1234",
+                200, false);
+        veiculo[1] = new Veiculo("Toyota", "Hilux", "Prata", "BBB-1234",
+                300, false);
+        veiculo[2] = new Veiculo("Hyunday", "HB20", "Branca", "CCC-1234",
+                100, false);
+        veiculo[3] = new Veiculo("Ford", "EcoSport", "Cinza", "DDD-1234",
+                150, false);
+        veiculo[4] = new Veiculo("VW", "Golf", "Preto", "EEE-1234",
+                250, false);
     }
 }

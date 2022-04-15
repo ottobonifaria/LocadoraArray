@@ -1,6 +1,6 @@
 package domain;
 
-public class Veiculos implements Comparable<Veiculos>{
+public class Veiculo implements Comparable<Veiculo>{
 
     private String marca;
     private String modeloVeiculo;
@@ -9,8 +9,8 @@ public class Veiculos implements Comparable<Veiculos>{
     private int valorDaDiaria;
     private boolean alugado;
 
-    public Veiculos(String marca, String modeloVeiculo,String cor, String placa,
-                    int valorDaDiaria, boolean alugado) {
+    public Veiculo(String marca, String modeloVeiculo, String cor, String placa,
+                   int valorDaDiaria, boolean alugado) {
         this.marca = marca;
         this.modeloVeiculo = modeloVeiculo;
         this.cor = cor;
@@ -69,15 +69,15 @@ public class Veiculos implements Comparable<Veiculos>{
 
     @Override
     public String toString() {
-        return "Marca ...............: " + marca +
-                "\nModelo ..............: " + modeloVeiculo +
-                "\nCor .................: " + cor +
-                "\nPlaca ...............: " + placa +
-                "\nValor da Diária R$ ..: " + valorDaDiaria+"\n";
+        return  "Marca: " + marca +" | "+
+                "Modelo: " + modeloVeiculo + " | "+
+                "Cor: " + cor + " | " +
+                "Placa: " + placa + " | " +
+                "Valor da Diária R$: " + valorDaDiaria ;
     }
 
     @Override
-    public int compareTo(Veiculos o) {
+    public int compareTo(Veiculo o) {
 
         if(this.valorDaDiaria < o.valorDaDiaria){
             return -1;
